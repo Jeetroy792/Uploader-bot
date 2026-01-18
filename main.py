@@ -190,13 +190,18 @@ photozip = 'https://i.ibb.co/v6Vr7HCt/1000003297.png'
 
 
 # Inline keyboard for start command
-BUTTONSCONTACT = InlineKeyboardMarkup([[InlineKeyboardButton(text="📞 Contact", url="https://t.me/ITsGOLU_OWNER_BOT")]])
+# Removed developer link and set to None
+BUTTONSCONTACT = None 
+
+# Help button with link removed and replaced with a callback
 keyboard = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="🛠️ Help", url="https://t.me/ITsGOLU_OWNER_BOT")        ],
+            InlineKeyboardButton(text="🛠️ Help", callback_data="help_data")
+        ],
     ]
 )
+
 
 # Image URLs for the random image feature
 image_urls = [
@@ -393,10 +398,25 @@ async def id_command(client, message: Message):
 async def call_html_handler(bot: Client, message: Message):
     await html_handler(bot, message)
     
+@bot.on_callback_query(filters.regex("help_data"))
+async def help_callback(client, callback_query):
+    await callback_query.message.edit_text(
+        "<b>🛠 Help Menu</b>\n\n"
+        "Welcome to the help section. Here is how you can use the bot:\n"
+        "1. Send the link you want to upload.\n"
+        "2. Follow the on-screen instructions.\n\n"
+        "<i>If you need further assistance, please contact the administrator.</i>",
+        reply_markup=InlineKeyboardMarkup([[
+            InlineKeyboardButton("🔙 Back", callback_data="back_to_start")
+        ]])
+    )
 
+@bot.on_callback_query(filters.regex("back_to_start"))
+async def back_callback(client, callback_query):
+    await start(client, callback_query.message)
+        
 @bot.on_message(filters.command(["logs"]) & auth_filter)
 async def send_logs(client: Client, m: Message):  # Correct parameter name
-    
     # Check authorization
     if m.chat.type == "channel":
         if not db.is_channel_authorized(m.chat.id, bot_username):

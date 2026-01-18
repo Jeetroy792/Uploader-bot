@@ -1,4 +1,5 @@
 <p align="center">
+ <img src="https://i.ibb.co/cXr3bstn/1000003297.png" width="200" height="200" alt="Bot Logo">
   </p>
 <h1 align="center">
   <a href="https://github.com/VAiDH1661/ITsGOLU_UPLOADER">

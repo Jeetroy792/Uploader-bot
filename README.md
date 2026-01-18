@@ -2,7 +2,7 @@
   <img src="https://i.ibb.co/v6Vr7HCt/1000003297.png" alt="DEV-TXT-LEECH">
 </p>
 <h1 align="center">
-  <a href="https://github.com/VAiDH1661/ITsGOLU_UPLOADER">
+  <a href="https://github.com/Jeetroy792">
 </h1>
 <br>
 <details>
@@ -51,7 +51,7 @@ Use these settings when adding a monitor:</b>
 <b>Click on the below button to deploy directly to render ↓</b>
 <br>
 <br>
-<a href="https://render.com/deploy?repo=https://github.com/VAiDH1661/ITsGOLU_UPLOADER">
+<a href="https://render.com/deploy?repo=https://github.com/Jeetroy792">
 <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render">
 </a>
 </details>

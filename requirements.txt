@@ -1,6 +1,5 @@
-pyrogram
+pyrofork
 tgcrypto
-pyromod
 aiohttp
 aiofiles
 requests
